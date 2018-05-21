@@ -1,0 +1,28 @@
+<html>
+<link href="/static/mdl/material.min.css" rel="stylesheet" media="screen">
+<link href="/static/css.css" rel="stylesheet" media="screen">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <head>
+    {% if title %}
+    <title>{{title}} - microblog</title>
+    {% else %}
+    <title>microblog</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Microblog: <a href="/index">Home</a></div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    <script src="static/mdl/material.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="bgDiv">
+        <div class="lg_container middle">
+            <div class="inner">
+                <div class="row text-title" id="loginHeader" role="heading">
+                    <div aria-level="1" data-bind="text: title">注册</div><br>
+                    <!-- ko if: isSubtitleVisible --><!-- /ko -->
+                    <form action="" method="post" name="login">
+                        {{ form.hidden_tag() }}
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            {{ form.username(class='mdl-textfield__input',type="text",id="sample3") }}
+                            <label class="mdl-textfield__label" for="sample3">用户名</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            {{ form.password(class='mdl-textfield__input',size=30) }}
+                            <label class="mdl-textfield__label" for="sample3">密码</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            {{ form.password(class='mdl-textfield__input',size=30) }}
+                            <label class="mdl-textfield__label" for="sample3">确认密码</label>
+                        </div>
+                        {% for error in form.password.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}<br>
+                        <p>{{ form.remember_me(class='mdl-checkbox__input') }} Remember Me</p>
+                        <!-- Colored raised button -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored fl-right">
+                            注册
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

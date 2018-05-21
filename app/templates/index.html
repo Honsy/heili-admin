@@ -1,0 +1,19 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="bgDiv" style="opacity: 1;visibility: visible;">
+        <div class="index_container middle">
+            <div>
+                            <!-- Accent-colored raised button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored index_button" onclick="window.location.href='login'">
+                登录
+            </button>
+            <!-- Accent-colored raised button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored index_button" onclick="window.location.href='register'">
+                注册
+            </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!-- extend base layout -->
+{% extends "Backstage/main.html" %}
+
+{% block content %}
+    <script type=text/javascript>
+        $(function() {
+
+            $("#addItem").click(function(){
+                var dialog = document.querySelector('dialog');
+                if (!dialog.showModal) {
+                    dialogPolyfill.registerDialog(dialog);
+                }
+                dialog.showModal();
+            });
+            $("#closeDialog").click(function () {
+                var dialog = document.querySelector('dialog');
+                dialog.close()
+
+            })
+        });
+    </script>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">Material</th>
+            <th>Quantity</th>
+            <th>Unit price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+            <td>25</td>
+            <td>$2.90</td>
+        </tr>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+            <td>50</td>
+            <td>$1.25</td>
+        </tr>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+            <td>10</td>
+            <td>$2.35</td>
+        </tr>
+        </tbody>
+    </table>
+    <dialog class="mdl-dialog">
+        <i id="closeDialog" class="material-icons">close</i>
+        <h4 class="mdl-dialog__title">Allow data collection?</h4>
+        <div class="mdl-dialog__content">
+            <p>
+                Allowing us to collect data will let us get you the information you want faster.
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button">Agree</button>
+            <button type="button" class="mdl-button close">Disagree</button>
+        </div>
+    </dialog>
+    <div id="addItem" class="te_addLink">
+        <!-- Colored FAB button -->
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+{% endblock %}
