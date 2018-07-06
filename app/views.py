@@ -41,9 +41,30 @@ def register():
 def main():
     return render_template('Backstage/main.html')
 
+# Tabbar技术
 @app.route('/technology', methods = ['GET', 'POST'])
 def technology():
     return render_template('Backstage/technology.html')
+# Tools栏
+@app.route('/tools', methods = ['GET', 'POST'])
+def tools():
+    return render_template('Backstage/tools.html')
+# Pic栏
+@app.route('/pic', methods = ['GET', 'POST'])
+def pic():
+    return render_template('Backstage/pic.html')
+# tongcheng栏
+@app.route('/samecity', methods = ['GET', 'POST'])
+def samecity():
+    return render_template('Backstage/samecity.html')
+# 留言栏
+@app.route('/messageboard', methods = ['GET', 'POST'])
+def messageboard():
+    return render_template('Backstage/messageboard.html')
+# Tools栏
+@app.route('/home', methods = ['GET', 'POST'])
+def home():
+    return render_template('Backstage/main.html')
 
 # 前端展示使用
 @app.route('/api/v1/index', methods = ['GET'])

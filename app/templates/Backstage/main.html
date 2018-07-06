@@ -34,23 +34,15 @@
   <div class="mdl-layout__drawer mdl-color--blue-grey-800 is-visible">
     <img src="/static/img/heili.png" class="heili-logo">
     <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
+          <a class="mdl-navigation__link" href="/home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>首页</a>
+          <a class="mdl-navigation__link" href="/tools"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>工具</a>
+          <a class="mdl-navigation__link" href="/pic"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>图片</a>
+          <a class="mdl-navigation__link" href="/samecity"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>同城</a>
+          <a class="mdl-navigation__link" href="/messageboard"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>留言板</a>
+
     </nav>
   </div>
   <main class="mdl-layout__content">
-  <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="technology" class="mdl-layout__tab is-active">技术宅</a>
-      <a href="#scroll-tab-2" class="mdl-layout__tab">Tab 2</a>
-      <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
-      <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
-      <a href="#scroll-tab-5" class="mdl-layout__tab">Tab 5</a>
-      <a href="#scroll-tab-6" class="mdl-layout__tab">Tab 6</a>
-    </div>
     <div class="page-content main_content"><!-- Your content goes here -->
     {% block content %}{% endblock %}
     </div>

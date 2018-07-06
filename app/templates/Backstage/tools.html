@@ -1,0 +1,112 @@
+<!-- extend base layout -->
+{% extends "Backstage/main.html" %}
+
+{% block content %}
+    <script type=text/javascript>
+        $(function () {
+
+            $("#addItem").click(function () {
+                var dialog = document.querySelector('dialog');
+                if (!dialog.showModal) {
+                    dialogPolyfill.registerDialog(dialog);
+                }
+                dialog.showModal();
+            });
+            $("#closeDialog").click(function () {
+                var dialog = document.querySelector('dialog');
+                dialog.close()
+
+            })
+        });
+    </script>
+      <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="technology" class="mdl-layout__tab is-active">VPN
+      </a>
+      <a href="#scroll-tab-2" class="mdl-layout__tab">iOS</a>
+      <a href="#scroll-tab-3" class="mdl-layout__tab">Web</a>
+      <a href="#scroll-tab-4" class="mdl-layout__tab">Python</a>
+      <a href="#scroll-tab-5" class="mdl-layout__tab">Designer</a>
+    </div>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">Material</th>
+            <th>Quantity</th>
+            <th>Unit price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+            <td>25</td>
+            <td>$2.90</td>
+        </tr>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+            <td>50</td>
+            <td>$1.25</td>
+        </tr>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+            <td>10</td>
+            <td>$2.35</td>
+        </tr>
+        </tbody>
+    </table>
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-left">
+        <li class="mdl-menu__item">Some Action</li>
+        <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+        <li disabled class="mdl-menu__item">Disabled Action</li>
+        <li class="mdl-menu__item">Yet Another Action</li>
+    </ul>
+    <dialog class="mdl-dialog dialog-list">
+        <!-- Simple Textfield -->
+        <form action="#" class="dialog-list">
+            <ul class="mdl-list">
+                <li class="mdl-list__item">
+                    <span class="dialog-list-item-title">工具名</span>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="sample1">
+                        <label class="mdl-textfield__label" for="sample1">Text...</label>
+                    </div>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="dialog-list-item-title">介绍</span>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="sample1">
+                        <label class="mdl-textfield__label" for="sample1">Text...</label>
+                    </div>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="dialog-list-item-title">图片</span>
+                    <!-- Rich Tooltip -->
+                    <div id="tt3" class="icon material-icons">cloud_upload</div>
+                    <div class="mdl-tooltip" data-mdl-for="tt3">
+                        Upload <strong>file.zip</strong>
+                    </div>
+
+                </li>
+                <li class="mdl-list__item">
+                    <!-- Colored raised button -->
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored fl-center">
+                        提交
+                    </button>
+                </li>
+            </ul>
+        </form>
+    </dialog>
+    <div class="te_addLink">
+        <!-- Right aligned menu on top of button  -->
+        <button id="demo-menu-top-right"
+                class="mdl-button mdl-js-button  mdl-button--fab mdl-button--colored">
+            <i class="material-icons">add</i>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+            data-mdl-for="demo-menu-top-right">
+            <li id="addItem" class="mdl-menu__item">添加工具</li>
+        </ul>
+    </div>
+{% endblock %}
